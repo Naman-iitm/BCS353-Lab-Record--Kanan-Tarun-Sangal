@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<!-- RIGHT FRAME - REGISTRATION PAGE (Experiment 5 inside the framed site)
+     Fields: name, password, e-mail, phone, sex(radio), DOB(3 selects),
+     languages(checkboxes), address(textarea). JS validation added in Exp 6 & 7. -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration Page</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div class="content">
+        <h2>Registration Page</h2>
+        <form class="card" action="#" method="post">
+
+            <div class="row">
+                <label for="name">1) Name:</label>
+                <input type="text" id="name" name="name" placeholder="Full name (min. 6 characters)">
+            </div>
+
+            <div class="row">
+                <label for="pwd">2) Password:</label>
+                <input type="password" id="pwd" name="password" placeholder="Min. 6 characters">
+            </div>
+
+            <div class="row">
+                <label for="email">3) E-mail id:</label>
+                <input type="email" id="email" name="email" placeholder="name@domain.com">
+            </div>
+
+            <div class="row">
+                <label for="phone">4) Phone Number:</label>
+                <input type="tel" id="phone" name="phone" maxlength="10" placeholder="10-digit mobile number">
+            </div>
+
+            <div class="row">
+                <label>5) Sex:</label>
+                <div class="inline-opts">
+                    <label><input type="radio" name="sex" value="male"> Male</label>
+                    <label><input type="radio" name="sex" value="female"> Female</label>
+                    <label><input type="radio" name="sex" value="other"> Other</label>
+                </div>
+            </div>
+
+            <div class="row">
+                <label>6) Date of Birth:</label>
+                <div class="inline-opts">
+                    <select name="dob-day">
+                        <option value="">Day</option>
+                    </select>
+                    <select name="dob-month">
+                        <option value="">Month</option>
+                    </select>
+                    <select name="dob-year">
+                        <option value="">Year</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row">
+                <label>7) Languages known:</label>
+                <div class="inline-opts">
+                    <label><input type="checkbox" name="lang" value="English"> English</label>
+                    <label><input type="checkbox" name="lang" value="Telugu"> Telugu</label>
+                    <label><input type="checkbox" name="lang" value="Hindi"> Hindi</label>
+                    <label><input type="checkbox" name="lang" value="Tamil"> Tamil</label>
+                </div>
+            </div>
+
+            <div class="row">
+                <label for="addr">8) Address:</label>
+                <textarea id="addr" name="address" placeholder="Enter your full address"></textarea>
+            </div>
+
+            <div class="btn-row">
+                <button type="submit" class="btn orange">Register</button>
+                <button type="reset" class="btn gray">Reset</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Fill the three date-of-birth select boxes dynamically -->
+    <script>
+        (function () {
+            var day = document.querySelector('select[name="dob-day"]');
+            var month = document.querySelector('select[name="dob-month"]');
+            var year = document.querySelector('select[name="dob-year"]');
+            for (var d = 1; d <= 31; d++) { day.appendChild(new Option(d, d)); }
+            var months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
+                          "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+            months.forEach(function (m, i) { month.appendChild(new Option(m, i + 1)); });
+            for (var y = 2024; y >= 1990; y--) { year.appendChild(new Option(y, y)); }
+        })();
+    </script>
+</body>
+</html>

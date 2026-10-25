@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<!-- RIGHT FRAME - CSE department catalogue (opens when "CSE" is clicked) -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSE Books</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script>
+        function addToCart(bookName) {
+            alert('"' + bookName + '" has been added to your cart.');
+        }
+    </script>
+</head>
+<body>
+    <div class="content">
+        <h2>CSE - Computer Science &amp; Engineering Books</h2>
+        <table class="grid">
+            <tr><th>Cover</th><th>Book</th><th>Author</th><th>Publisher</th><th>Price</th><th>Action</th></tr>
+            <tr>
+                <td><img class="cover" src="../images/xml-bible.svg" alt="XML Bible"></td>
+                <td>XML Bible</td><td>Winston</td><td>Wiley</td>
+                <td class="price">$40.5</td>
+                <td><button class="btn orange" onclick="addToCart('XML Bible')">Add to cart</button></td>
+            </tr>
+            <tr>
+                <td><img class="cover" src="../images/java2.svg" alt="Java 2"></td>
+                <td>Java 2</td><td>Watson</td><td>BPB Publications</td>
+                <td class="price">$35.5</td>
+                <td><button class="btn orange" onclick="addToCart('Java 2')">Add to cart</button></td>
+            </tr>
+            <tr>
+                <td><img class="cover" src="../images/html24.svg" alt="HTML in 24 Hours"></td>
+                <td>HTML in 24 Hours</td><td>Sam Peter</td><td>Sam Publication</td>
+                <td class="price">$50</td>
+                <td><button class="btn orange" onclick="addToCart('HTML in 24 Hours')">Add to cart</button></td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

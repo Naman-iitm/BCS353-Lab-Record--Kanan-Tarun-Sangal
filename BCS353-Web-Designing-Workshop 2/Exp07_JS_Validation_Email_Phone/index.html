@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<!--
+  EXPERIMENT 7 - JAVASCRIPT VALIDATION (E-mail & Phone, complete form)
+  Builds on Experiment 6 and validates all four text fields:
+   1. Name     -> alphabets only, length >= 6
+   2. Password -> length >= 6
+   3. E-mail   -> standard pattern name@domain.com
+   4. Phone    -> exactly 10 digits
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exp 7 - JS Validation (Email &amp; Phone)</title>
+    <link rel="icon" type="image/svg+xml" href="../Exp01_Homepage_Frames/images/logo.svg">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: "Segoe UI", Arial, sans-serif; background: #f5f7fa; color: #2d3748; }
+        header { background: linear-gradient(135deg, #1f3a5f, #2c5282); color: #fff; }
+        .brand { display: flex; align-items: center; gap: 14px; padding: 12px 24px; }
+        .brand img { width: 52px; height: 52px; }
+        .brand h1 { font-size: 1.3rem; }
+        .brand small { display: block; font-size: .72rem; font-weight: 400; opacity: .85; }
+        nav { display: flex; background: rgba(0,0,0,.22); }
+        nav a { flex: 1; text-align: center; color: #fff; text-decoration: none; padding: 10px;
+                border-right: 1px solid rgba(255,255,255,.15); font-size: .9rem; }
+        nav a:last-child { border-right: none; }
+        nav a:hover, nav a.active { background: #f4a261; color: #1f3a5f; }
+        .layout { display: flex; min-height: calc(100vh - 118px); }
+        aside { width: 190px; background: #1f3a5f; color: #fff; padding: 18px 0; }
+        aside h3 { text-align: center; font-size: .9rem; text-transform: uppercase;
+                   letter-spacing: 1px; padding-bottom: 10px; border-bottom: 1px solid rgba(255,255,255,.2);
+                   margin: 0 12px 12px; }
+        aside a { display: block; color: #dbeafe; text-decoration: none; padding: 12px 22px;
+                  border-left: 4px solid transparent; }
+        aside a:hover { background: rgba(244,162,97,.18); border-left-color: #f4a261; color: #fff; }
+        main { flex: 1; padding: 30px 36px; }
+        main h2 { color: #1f3a5f; border-bottom: 3px solid #f4a261; display: inline-block;
+                  padding-bottom: 4px; margin-bottom: 18px; }
+        form.card { background: #fff; max-width: 620px; margin: auto; padding: 28px 32px;
+                    border-radius: 10px; box-shadow: 0 3px 12px rgba(0,0,0,.1); }
+        .row { margin-bottom: 17px; }
+        label.lbl { display: block; font-weight: 600; margin-bottom: 6px; color: #1f3a5f; }
+        input[type="text"], input[type="password"], input[type="email"],
+        input[type="tel"], select, textarea {
+            width: 100%; padding: 9px 11px; border: 1px solid #cbd5e0; border-radius: 6px;
+            font-size: .95rem; font-family: inherit; }
+        input.invalid { border-color: #e53e3e; background: #fff5f5; }
+        .error { color: #e53e3e; font-size: .82rem; margin-top: 4px; min-height: 1em; }
+        textarea { min-height: 80px; resize: vertical; }
+        .inline-opts { display: flex; gap: 18px; flex-wrap: wrap; }
+        .inline-opts label { font-weight: 400; display: inline-flex; gap: 6px; align-items: center; }
+        .dob select { width: auto; min-width: 90px; margin-right: 10px; }
+        .btn-row { display: flex; gap: 14px; justify-content: center; margin-top: 10px; }
+        button { border: none; padding: 10px 30px; border-radius: 6px; font-size: .95rem;
+                 cursor: pointer; color: #fff; }
+        .submit { background: #dd6b20; } .submit:hover { background: #c05621; }
+        .reset  { background: #718096; } .reset:hover  { background: #4a5568; }
+        .success { max-width: 620px; margin: 14px auto 0; background: #f0fff4; border: 1px solid #9ae6b4;
+                   color: #22543d; padding: 12px 16px; border-radius: 8px; display: none; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="brand">
+            <img src="../Exp01_Homepage_Frames/images/logo.svg" alt="BookHaven logo">
+            <h1>BookHaven Online Bookstore
+                <small>GL Bajaj Institute of Technology &amp; Management &bull; Project by: Kanan Tarun Sangal</small>
+            </h1>
+        </div>
+        <nav>
+            <a href="../Exp01_Homepage_Frames/frames/home.html">Home</a>
+            <a href="../Exp02_Login_Page/index.html">Login</a>
+            <a href="#" class="active">Registration</a>
+            <a href="../Exp03_Catalogue_Page/index.html">Catalogue</a>
+            <a href="../Exp04_Cart_Page/index.html">Cart</a>
+        </nav>
+    </header>
+
+    <div class="layout">
+        <aside>
+            <h3>Departments</h3>
+            <a href="../Exp01_Homepage_Frames/frames/cse.html">CSE</a>
+            <a href="../Exp01_Homepage_Frames/frames/ece.html">ECE</a>
+            <a href="../Exp01_Homepage_Frames/frames/eee.html">EEE</a>
+            <a href="../Exp01_Homepage_Frames/frames/civil.html">CIVIL</a>
+        </aside>
+
+        <main>
+            <h2>Registration - Complete JS Validation</h2>
+            <form class="card" name="regForm" novalidate onsubmit="return validateForm()">
+
+                <div class="row">
+                    <label class="lbl" for="name">1) Name:</label>
+                    <input type="text" id="name" name="name" placeholder="Alphabets only, min. 6 characters">
+                    <div class="error" id="err-name"></div>
+                </div>
+
+                <div class="row">
+                    <label class="lbl" for="pwd">2) Password:</label>
+                    <input type="password" id="pwd" name="password" placeholder="Min. 6 characters">
+                    <div class="error" id="err-pwd"></div>
+                </div>
+
+                <div class="row">
+                    <label class="lbl" for="email">3) E-mail id:</label>
+                    <input type="email" id="email" name="email" placeholder="name@domain.com">
+                    <div class="error" id="err-email"></div>
+                </div>
+
+                <div class="row">
+                    <label class="lbl" for="phone">4) Phone Number:</label>
+                    <input type="tel" id="phone" name="phone" maxlength="10" placeholder="10-digit mobile number">
+                    <div class="error" id="err-phone"></div>
+                </div>
+
+                <div class="row">
+                    <label class="lbl">5) Sex:</label>
+                    <div class="inline-opts">
+                        <label><input type="radio" name="sex" value="male"> Male</label>
+                        <label><input type="radio" name="sex" value="female"> Female</label>
+                        <label><input type="radio" name="sex" value="other"> Other</label>
+                    </div>
+                </div>
+
+                <div class="row dob">
+                    <label class="lbl">6) Date of Birth:</label>
+                    <select name="dob-day" id="dob-day"><option value="">Day</option></select>
+                    <select name="dob-month" id="dob-month"><option value="">Month</option></select>
+                    <select name="dob-year" id="dob-year"><option value="">Year</option></select>
+                </div>
+
+                <div class="row">
+                    <label class="lbl">7) Languages known:</label>
+                    <div class="inline-opts">
+                        <label><input type="checkbox" name="lang" value="English"> English</label>
+                        <label><input type="checkbox" name="lang" value="Telugu"> Telugu</label>
+                        <label><input type="checkbox" name="lang" value="Hindi"> Hindi</label>
+                        <label><input type="checkbox" name="lang" value="Tamil"> Tamil</label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <label class="lbl" for="addr">8) Address:</label>
+                    <textarea id="addr" name="address" placeholder="Enter your full address"></textarea>
+                </div>
+
+                <div class="btn-row">
+                    <button type="submit" class="submit">Register</button>
+                    <button type="reset" class="reset" onclick="clearErrors()">Reset</button>
+                </div>
+            </form>
+            <div class="success" id="success-box">All fields validated successfully! Registration accepted (demo).</div>
+        </main>
+    </div>
+
+    <script>
+        // ---- Fill the three date-of-birth select boxes (day / month / year) ----
+        (function fillDOB() {
+            var day = document.getElementById('dob-day');
+            var month = document.getElementById('dob-month');
+            var year = document.getElementById('dob-year');
+            for (var d = 1; d <= 31; d++) { day.appendChild(new Option(d, d)); }
+            ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']
+                .forEach(function (m, i) { month.appendChild(new Option(m, i + 1)); });
+            for (var y = 2008; y >= 1995; y--) { year.appendChild(new Option(y, y)); }
+        })();
+
+        // ---- Helpers to show / clear error messages ----
+        function setError(inputId, message) {
+            document.getElementById('err-' + inputId).textContent = message;
+            document.getElementById(inputId).classList.add('invalid');
+        }
+        function clearOne(inputId) {
+            document.getElementById('err-' + inputId).textContent = '';
+            document.getElementById(inputId).classList.remove('invalid');
+        }
+        function clearErrors() {
+            ['name', 'pwd', 'email', 'phone'].forEach(clearOne);
+            document.getElementById('success-box').style.display = 'none';
+        }
+
+        // ---- Complete validation logic (Experiments 6 + 7) ----
+        function validateForm() {
+            var isValid = true;
+            clearErrors();
+
+            var name  = document.getElementById('name').value.trim();
+            var pwd   = document.getElementById('pwd').value;
+            var email = document.getElementById('email').value.trim();
+            var phone = document.getElementById('phone').value.trim();
+
+            // 1) Name: alphabets only, at least 6 characters
+            if (name === '') {
+                setError('name', 'Name is required.'); isValid = false;
+            } else if (name.length < 6) {
+                setError('name', 'Name must be at least 6 characters long.'); isValid = false;
+            } else if (!/^[A-Za-z ]+$/.test(name)) {
+                setError('name', 'Name must contain alphabets only.'); isValid = false;
+            }
+
+            // 2) Password: minimum 6 characters
+            if (pwd === '') {
+                setError('pwd', 'Password is required.'); isValid = false;
+            } else if (pwd.length < 6) {
+                setError('pwd', 'Password must not be less than 6 characters.'); isValid = false;
+            }
+
+            // 3) E-mail: standard pattern name@domain.com
+            var emailPattern = /^[a-zA-Z0-9]+([\.\-]?[a-zA-Z0-9]+)*@[a-zA-Z0-9]+([\.\-]?[a-zA-Z0-9]+)*(\.[a-zA-Z]{2,})+$/;
+            if (email === '') {
+                setError('email', 'E-mail id is required.'); isValid = false;
+            } else if (!emailPattern.test(email)) {
+                setError('email', 'Invalid e-mail. Use the standard pattern name@domain.com.'); isValid = false;
+            }
+
+            // 4) Phone number: exactly 10 digits
+            if (phone === '') {
+                setError('phone', 'Phone number is required.'); isValid = false;
+            } else if (!/^\d{10}$/.test(phone)) {
+                setError('phone', 'Phone number must contain exactly 10 digits.'); isValid = false;
+            }
+
+            if (isValid) {
+                document.getElementById('success-box').style.display = 'block';
+            }
+            return false; // static page: keep the user on the same page
+        }
+    </script>
+</body>
+</html>

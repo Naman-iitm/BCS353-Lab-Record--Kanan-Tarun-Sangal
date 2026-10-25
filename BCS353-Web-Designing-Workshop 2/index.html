@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<!-- Master launcher: links all 10 experiments of BCS353 Web Designing Workshop -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BCS353 - Web Designing Workshop | All Experiments</title>
+    <link rel="icon" type="image/svg+xml" href="Exp01_Homepage_Frames/images/logo.svg">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: "Segoe UI", Arial, sans-serif; background: #f5f7fa; color: #2d3748; }
+        header {
+            background: linear-gradient(135deg, #1f3a5f, #2c5282);
+            color: #fff; text-align: center; padding: 38px 20px 30px;
+        }
+        header h1 { font-size: 1.9rem; margin-bottom: 6px; }
+        header p { opacity: .88; font-size: .95rem; }
+        .grid {
+            max-width: 1080px; margin: 30px auto 50px; padding: 0 20px;
+            display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 18px;
+        }
+        .card {
+            background: #fff; border-radius: 12px; padding: 20px 22px;
+            box-shadow: 0 3px 10px rgba(0,0,0,.08); text-decoration: none; color: inherit;
+            border-top: 5px solid #f4a261; transition: transform .18s, box-shadow .18s;
+            display: flex; flex-direction: column;
+        }
+        .card:hover { transform: translateY(-5px); box-shadow: 0 10px 22px rgba(0,0,0,.14); }
+        .num {
+            width: 42px; height: 42px; border-radius: 50%; background: #1f3a5f; color: #fff;
+            display: flex; align-items: center; justify-content: center;
+            font-weight: bold; font-size: 1.05rem; margin-bottom: 12px;
+        }
+        .card h2 { font-size: 1.05rem; color: #1f3a5f; margin-bottom: 8px; }
+        .card p { font-size: .86rem; color: #4a5568; flex: 1; }
+        .card .open { margin-top: 14px; color: #dd6b20; font-weight: 600; font-size: .85rem; }
+        footer { text-align: center; color: #718096; font-size: .82rem; padding-bottom: 30px; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>BCS353 - Web Designing Workshop</h1>
+        <p>Online Bookstore Website &middot; Complete Set of 10 Experiments &middot; HTML, CSS &amp; JavaScript</p>
+        <p style="margin-top:10px;">Project by: <strong>Kanan Tarun Sangal</strong>
+           &nbsp;|&nbsp; GL Bajaj Institute of Technology &amp; Management</p>
+    </header>
+
+    <main class="grid">
+        <a class="card" href="Exp01_Homepage_Frames/index.html">
+            <div class="num">1</div>
+            <h2>Homepage using Three Frames</h2>
+            <p>Frameset with top frame (logo, college name &amp; nav links), left frame
+               (CSE/ECE/EEE/CIVIL) and right frame that loads the linked pages.</p>
+            <span class="open">Open Experiment &rarr;</span>
+        </a>
+
+        <a class="card" href="Exp02_Login_Page/index.html">
+            <div class="num">2</div>
+            <h2>Login Page</h2>
+            <p>User name and password form with Submit and Reset buttons inside the
+               bookstore layout.</p>
+            <span class="open">Open Experiment &rarr;</span>
+        </a>
+
+        <a class="card" href="Exp03_Catalogue_Page/index.html">
+            <div class="num">3</div>
+            <h2>Catalogue Page</h2>
+            <p>Table of every book with cover snapshot, author, publisher, price and an
+               Add-to-cart button.</p>
+            <span class="open">Open Experiment &rarr;</span>
+        </a>
+
+        <a class="card" href="Exp04_Cart_Page/index.html">
+            <div class="num">4</div>
+            <h2>Cart Page</h2>
+            <p>Books added to the cart with price, quantity, amount and the total amount.</p>
+            <span class="open">Open Experiment &rarr;</span>
+        </a>
+
+        <a class="card" href="Exp05_Registration_Form/index.html">
+            <div class="num">5</div>
+            <h2>Registration Form</h2>
+            <p>Name, password, e-mail, phone, sex (radio), date of birth (3 selects),
+               languages (checkboxes) and address (textarea).</p>
+            <span class="open">Open Experiment &rarr;</span>
+        </a>
+
+        <a class="card" href="Exp06_JS_Validation_Name_Password/index.html">
+            <div class="num">6</div>
+            <h2>JS Validation - Name &amp; Password</h2>
+            <p>Name must contain alphabets and be at least 6 characters; password must be
+               at least 6 characters.</p>
+            <span class="open">Open Experiment &rarr;</span>
+        </a>
+
+        <a class="card" href="Exp07_JS_Validation_Email_Phone/index.html">
+            <div class="num">7</div>
+            <h2>JS Validation - E-mail &amp; Phone</h2>
+            <p>E-mail must follow name@domain.com and phone number must contain exactly
+               10 digits (all four fields validated).</p>
+            <span class="open">Open Experiment &rarr;</span>
+        </a>
+
+        <a class="card" href="Exp08_CSS_Fonts_Background/index.html">
+            <div class="num">8</div>
+            <h2>CSS Fonts &amp; Background Images</h2>
+            <p>Class/id/element selectors with different fonts and styles, plus a
+               background image on the page and on a single element.</p>
+            <span class="open">Open Experiment &rarr;</span>
+        </a>
+
+        <a class="card" href="Exp09_CSS_Repeat_Links/index.html">
+            <div class="num">9</div>
+            <h2>CSS background-repeat &amp; Link States</h2>
+            <p>repeat, repeat-x, repeat-y and no-repeat demonstration plus
+               a:link, a:visited, a:hover and a:active styles.</p>
+            <span class="open">Open Experiment &rarr;</span>
+        </a>
+
+        <a class="card" href="Exp10_ToDo_List/index.html">
+            <div class="num">10</div>
+            <h2>Mini Project - To-Do List App</h2>
+            <p>Integrated HTML + CSS + JS application: add, complete, delete and filter
+               tasks with validation and localStorage persistence.</p>
+            <span class="open">Open Experiment &rarr;</span>
+        </a>
+    </main>
+
+    <footer>
+        BCS353 Web Designing Workshop &bull; GL Bajaj Institute of Technology &amp; Management
+        &bull; Project by Kanan Tarun Sangal
+    </footer>
+</body>
+</html>

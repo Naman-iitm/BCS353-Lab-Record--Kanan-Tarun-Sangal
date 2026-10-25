@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<!--
+  EXPERIMENT 3 - CATALOGUE PAGE (standalone)
+  A table of all available books containing:
+  1) cover snapshot  2) author name  3) publisher  4) price  5) Add to cart button
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exp 3 - Catalogue Page</title>
+    <link rel="icon" type="image/svg+xml" href="images/logo.svg">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: "Segoe UI", Arial, sans-serif; background: #f5f7fa; color: #2d3748; }
+
+        header { background: linear-gradient(135deg, #1f3a5f, #2c5282); color: #fff; }
+        .brand { display: flex; align-items: center; gap: 14px; padding: 12px 24px; }
+        .brand img { width: 52px; height: 52px; }
+        .brand h1 { font-size: 1.3rem; }
+        .brand small { display: block; font-size: .72rem; font-weight: 400; opacity: .85; }
+        nav { display: flex; background: rgba(0,0,0,.22); }
+        nav a { flex: 1; text-align: center; color: #fff; text-decoration: none; padding: 10px;
+                border-right: 1px solid rgba(255,255,255,.15); font-size: .9rem; }
+        nav a:last-child { border-right: none; }
+        nav a:hover, nav a.active { background: #f4a261; color: #1f3a5f; }
+
+        .layout { display: flex; min-height: calc(100vh - 118px); }
+        aside { width: 190px; background: #1f3a5f; color: #fff; padding: 18px 0; }
+        aside h3 { text-align: center; font-size: .9rem; text-transform: uppercase;
+                   letter-spacing: 1px; padding-bottom: 10px; border-bottom: 1px solid rgba(255,255,255,.2);
+                   margin: 0 12px 12px; }
+        aside a { display: block; color: #dbeafe; text-decoration: none; padding: 12px 22px;
+                  border-left: 4px solid transparent; }
+        aside a:hover { background: rgba(244,162,97,.18); border-left-color: #f4a261; color: #fff; }
+
+        main { flex: 1; padding: 30px 36px; }
+        main h2 { color: #1f3a5f; border-bottom: 3px solid #f4a261; display: inline-block;
+                  padding-bottom: 4px; margin-bottom: 14px; }
+
+        table { width: 100%; border-collapse: collapse; background: #fff; border-radius: 8px;
+                overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,.08); }
+        th { background: #1f3a5f; color: #fff; padding: 12px 10px; text-align: left; font-size: .9rem; }
+        td { padding: 12px 10px; border-bottom: 1px solid #e2e8f0; vertical-align: middle; }
+        tr:nth-child(even) td { background: #f8fafc; }
+        tr:hover td { background: #fff7ed; }
+        img.cover { width: 62px; height: 82px; border-radius: 4px; }
+        .price { color: #c05621; font-weight: bold; }
+        .cart-btn { background: #dd6b20; color: #fff; border: none; padding: 8px 16px;
+                    border-radius: 6px; cursor: pointer; }
+        .cart-btn:hover { background: #c05621; }
+    </style>
+    <script>
+        function addToCart(bookName) {
+            alert('"' + bookName + '" has been added to your cart.\n\nOpen the Cart page to view it.');
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="brand">
+            <img src="images/logo.svg" alt="BookHaven logo">
+            <h1>BookHaven Online Bookstore
+                <small>GL Bajaj Institute of Technology &amp; Management &bull; Project by: Kanan Tarun Sangal</small>
+            </h1>
+        </div>
+        <nav>
+            <a href="../Exp01_Homepage_Frames/frames/home.html">Home</a>
+            <a href="../Exp02_Login_Page/index.html">Login</a>
+            <a href="../Exp05_Registration_Form/index.html">Registration</a>
+            <a href="#" class="active">Catalogue</a>
+            <a href="../Exp04_Cart_Page/index.html">Cart</a>
+        </nav>
+    </header>
+
+    <div class="layout">
+        <aside>
+            <h3>Departments</h3>
+            <a href="../Exp01_Homepage_Frames/frames/cse.html">CSE</a>
+            <a href="../Exp01_Homepage_Frames/frames/ece.html">ECE</a>
+            <a href="../Exp01_Homepage_Frames/frames/eee.html">EEE</a>
+            <a href="../Exp01_Homepage_Frames/frames/civil.html">CIVIL</a>
+        </aside>
+
+        <main>
+            <h2>Book Catalogue</h2>
+            <table>
+                <tr>
+                    <th>Cover</th><th>Book</th><th>Author Name</th>
+                    <th>Publisher</th><th>Price</th><th>Action</th>
+                </tr>
+                <tr>
+                    <td><img class="cover" src="images/xml-bible.svg" alt="XML Bible cover"></td>
+                    <td>XML Bible</td><td>Winston</td><td>Wiley</td>
+                    <td class="price">$40.5</td>
+                    <td><button class="cart-btn" onclick="addToCart('XML Bible')">Add to cart</button></td>
+                </tr>
+                <tr>
+                    <td><img class="cover" src="images/java2.svg" alt="Java 2 cover"></td>
+                    <td>Java 2</td><td>Watson</td><td>BPB Publications</td>
+                    <td class="price">$35.5</td>
+                    <td><button class="cart-btn" onclick="addToCart('Java 2')">Add to cart</button></td>
+                </tr>
+                <tr>
+                    <td><img class="cover" src="images/html24.svg" alt="HTML in 24 Hours cover"></td>
+                    <td>HTML in 24 Hours</td><td>Sam Peter</td><td>Sam Publication</td>
+                    <td class="price">$50</td>
+                    <td><button class="cart-btn" onclick="addToCart('HTML in 24 Hours')">Add to cart</button></td>
+                </tr>
+                <tr>
+                    <td><img class="cover" src="images/ai.svg" alt="Artificial Intelligence cover"></td>
+                    <td>Artificial Intelligence</td><td>S. Russel</td><td>Princeton Hall</td>
+                    <td class="price">$63</td>
+                    <td><button class="cart-btn" onclick="addToCart('Artificial Intelligence')">Add to cart</button></td>
+                </tr>
+                <tr>
+                    <td><img class="cover" src="images/digital-electronics.svg" alt="Digital Electronics cover"></td>
+                    <td>Digital Electronics</td><td>Morris Mano</td><td>McGraw Hill</td>
+                    <td class="price">$45</td>
+                    <td><button class="cart-btn" onclick="addToCart('Digital Electronics')">Add to cart</button></td>
+                </tr>
+                <tr>
+                    <td><img class="cover" src="images/signals.svg" alt="Signals and Systems cover"></td>
+                    <td>Signals &amp; Systems</td><td>Oppenheim</td><td>Oxford</td>
+                    <td class="price">$55</td>
+                    <td><button class="cart-btn" onclick="addToCart('Signals & Systems')">Add to cart</button></td>
+                </tr>
+                <tr>
+                    <td><img class="cover" src="images/electric-machines.svg" alt="Electric Machines cover"></td>
+                    <td>Electric Machines</td><td>I. J. Nagrath</td><td>Pearson</td>
+                    <td class="price">$48</td>
+                    <td><button class="cart-btn" onclick="addToCart('Electric Machines')">Add to cart</button></td>
+                </tr>
+                <tr>
+                    <td><img class="cover" src="images/power-systems.svg" alt="Power Systems cover"></td>
+                    <td>Power Systems</td><td>C. L. Wadhwa</td><td>Cambridge</td>
+                    <td class="price">$52</td>
+                    <td><button class="cart-btn" onclick="addToCart('Power Systems')">Add to cart</button></td>
+                </tr>
+                <tr>
+                    <td><img class="cover" src="images/structural.svg" alt="Structural Analysis cover"></td>
+                    <td>Structural Analysis</td><td>R. C. Hibbeler</td><td>Tata McGraw Hill</td>
+                    <td class="price">$58</td>
+                    <td><button class="cart-btn" onclick="addToCart('Structural Analysis')">Add to cart</button></td>
+                </tr>
+                <tr>
+                    <td><img class="cover" src="images/geotechnical.svg" alt="Geotechnical Engineering cover"></td>
+                    <td>Geotechnical Engineering</td><td>B. M. Das</td><td>Elsevier</td>
+                    <td class="price">$42</td>
+                    <td><button class="cart-btn" onclick="addToCart('Geotechnical Engineering')">Add to cart</button></td>
+                </tr>
+            </table>
+        </main>
+    </div>
+</body>
+</html>

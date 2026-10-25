@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<!--
+  EXPERIMENT 2 - LOGIN PAGE (standalone version)
+  Re-creates the framed bookstore layout on a single page using CSS flexbox.
+  Fields: User Name, Password; Buttons: Submit, Reset.
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exp 2 - Login Page</title>
+    <link rel="icon" type="image/svg+xml" href="../Exp01_Homepage_Frames/images/logo.svg">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: "Segoe UI", Arial, sans-serif; background: #f5f7fa; color: #2d3748; }
+
+        /* Header (acts like the top frame) */
+        header { background: linear-gradient(135deg, #1f3a5f, #2c5282); color: #fff; }
+        .brand { display: flex; align-items: center; gap: 14px; padding: 12px 24px; }
+        .brand img { width: 52px; height: 52px; }
+        .brand h1 { font-size: 1.3rem; }
+        .brand small { display: block; font-size: .72rem; font-weight: 400; opacity: .85; }
+        nav { display: flex; background: rgba(0,0,0,.22); }
+        nav a { flex: 1; text-align: center; color: #fff; text-decoration: none; padding: 10px;
+                border-right: 1px solid rgba(255,255,255,.15); font-size: .9rem; }
+        nav a:last-child { border-right: none; }
+        nav a:hover, nav a.active { background: #f4a261; color: #1f3a5f; }
+
+        /* Body: sidebar + content (acts like left + right frames) */
+        .layout { display: flex; min-height: calc(100vh - 118px); }
+        aside { width: 190px; background: #1f3a5f; color: #fff; padding: 18px 0; }
+        aside h3 { text-align: center; font-size: .9rem; text-transform: uppercase;
+                   letter-spacing: 1px; padding-bottom: 10px; border-bottom: 1px solid rgba(255,255,255,.2);
+                   margin: 0 12px 12px; }
+        aside a { display: block; color: #dbeafe; text-decoration: none; padding: 12px 22px;
+                  border-left: 4px solid transparent; }
+        aside a:hover { background: rgba(244,162,97,.18); border-left-color: #f4a261; color: #fff; }
+
+        main { flex: 1; padding: 30px 36px; }
+        main h2 { color: #1f3a5f; border-bottom: 3px solid #f4a261; display: inline-block;
+                  padding-bottom: 4px; margin-bottom: 18px; }
+
+        form.card { background: #fff; max-width: 520px; margin: auto; padding: 28px 32px;
+                    border-radius: 10px; box-shadow: 0 3px 12px rgba(0,0,0,.1); }
+        .row { margin-bottom: 18px; }
+        label { display: block; font-weight: 600; margin-bottom: 6px; color: #1f3a5f; }
+        input { width: 100%; padding: 10px 12px; border: 1px solid #cbd5e0; border-radius: 6px;
+                font-size: .95rem; }
+        input:focus { outline: none; border-color: #2c5282; box-shadow: 0 0 0 3px rgba(44,82,130,.15); }
+        .btn-row { display: flex; gap: 14px; justify-content: center; }
+        button { border: none; padding: 10px 30px; border-radius: 6px; font-size: .95rem;
+                 cursor: pointer; color: #fff; }
+        .submit { background: #dd6b20; } .submit:hover { background: #c05621; }
+        .reset  { background: #718096; } .reset:hover  { background: #4a5568; }
+    </style>
+    <script>
+        // Simple check - complete field validation is covered in Experiments 6 & 7
+        function checkLogin() {
+            var u = document.loginForm.username.value.trim();
+            var p = document.loginForm.password.value.trim();
+            if (u === "" || p === "") {
+                alert("Please enter both User Name and Password.");
+                return false;
+            }
+            alert("Welcome " + u + "! Login successful (demo).");
+            return false; // static page: do not actually submit
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="brand">
+            <img src="../Exp01_Homepage_Frames/images/logo.svg" alt="BookHaven logo">
+            <h1>BookHaven Online Bookstore
+                <small>GL Bajaj Institute of Technology &amp; Management &bull; Project by: Kanan Tarun Sangal</small>
+            </h1>
+        </div>
+        <nav>
+            <a href="../Exp01_Homepage_Frames/frames/home.html">Home</a>
+            <a href="#" class="active">Login</a>
+            <a href="../Exp05_Registration_Form/index.html">Registration</a>
+            <a href="../Exp03_Catalogue_Page/index.html">Catalogue</a>
+            <a href="../Exp04_Cart_Page/index.html">Cart</a>
+        </nav>
+    </header>
+
+    <div class="layout">
+        <aside>
+            <h3>Departments</h3>
+            <a href="../Exp01_Homepage_Frames/frames/cse.html">CSE</a>
+            <a href="../Exp01_Homepage_Frames/frames/ece.html">ECE</a>
+            <a href="../Exp01_Homepage_Frames/frames/eee.html">EEE</a>
+            <a href="../Exp01_Homepage_Frames/frames/civil.html">CIVIL</a>
+        </aside>
+
+        <main>
+            <h2>Login Page</h2>
+            <form name="loginForm" class="card" onsubmit="return checkLogin()">
+                <div class="row">
+                    <label for="username">User Name:</label>
+                    <input type="text" id="username" name="username" placeholder="Enter your user name">
+                </div>
+                <div class="row">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" placeholder="Enter your password">
+                </div>
+                <div class="btn-row">
+                    <button type="submit" class="submit">Submit</button>
+                    <button type="reset" class="reset">Reset</button>
+                </div>
+            </form>
+        </main>
+    </div>
+</body>
+</html>

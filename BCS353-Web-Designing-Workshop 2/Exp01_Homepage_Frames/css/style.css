@@ -1,0 +1,190 @@
+/* ============================================================
+   Shared stylesheet for the BookHaven framed bookstore (Exp 1)
+   External CSS: linked by every page inside the frames
+   ============================================================ */
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #f5f7fa;
+    color: #2d3748;
+    line-height: 1.6;
+}
+
+/* ---------- Top frame ---------- */
+.top-wrap {
+    background: linear-gradient(135deg, #1f3a5f 0%, #2c5282 100%);
+    color: #ffffff;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.brand-row {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 8px 22px 4px;
+}
+.brand-row img { width: 52px; height: 52px; }
+.brand-row h1 { font-size: 1.35rem; letter-spacing: .5px; }
+.brand-row small { display: block; font-size: .72rem; font-weight: 400; opacity: .85; }
+
+.top-nav {
+    margin-top: auto;
+    display: flex;
+    background: rgba(0, 0, 0, .22);
+}
+.top-nav a {
+    flex: 1;
+    text-align: center;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 9px 6px;
+    font-size: .9rem;
+    border-right: 1px solid rgba(255, 255, 255, .15);
+    transition: background .25s;
+}
+.top-nav a:last-child { border-right: none; }
+.top-nav a:hover { background: #f4a261; color: #1f3a5f; }
+
+/* ---------- Left frame ---------- */
+.left-wrap {
+    background: #1f3a5f;
+    color: #fff;
+    min-height: 100%;
+    padding: 18px 0;
+}
+.left-wrap h3 {
+    text-align: center;
+    font-size: .95rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, .2);
+    margin: 0 12px 12px;
+}
+.left-wrap a {
+    display: block;
+    color: #dbeafe;
+    text-decoration: none;
+    padding: 12px 22px;
+    border-left: 4px solid transparent;
+    transition: all .2s;
+}
+.left-wrap a:hover {
+    background: rgba(244, 162, 97, .18);
+    border-left-color: #f4a261;
+    color: #ffffff;
+}
+
+/* ---------- Right (main) frame content ---------- */
+.content { padding: 28px 34px; max-width: 1000px; }
+.content h2 {
+    color: #1f3a5f;
+    border-bottom: 3px solid #f4a261;
+    display: inline-block;
+    padding-bottom: 4px;
+    margin-bottom: 16px;
+}
+.content h3 { color: #2c5282; margin: 18px 0 8px; }
+.content p { margin-bottom: 10px; }
+.content ul { margin: 8px 0 8px 22px; }
+
+.hero {
+    background: #ffffff;
+    border-left: 6px solid #f4a261;
+    border-radius: 8px;
+    padding: 22px 26px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .08);
+    margin-bottom: 18px;
+}
+
+/* ---------- Tables (catalogue & cart) ---------- */
+table.grid {
+    width: 100%;
+    border-collapse: collapse;
+    background: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .08);
+    margin-top: 12px;
+}
+table.grid th {
+    background: #1f3a5f;
+    color: #fff;
+    padding: 12px 10px;
+    text-align: left;
+    font-size: .9rem;
+}
+table.grid td {
+    padding: 12px 10px;
+    border-bottom: 1px solid #e2e8f0;
+    vertical-align: middle;
+}
+table.grid tr:nth-child(even) td { background: #f8fafc; }
+table.grid tr:hover td { background: #fff7ed; }
+table.grid img.cover { width: 62px; height: 82px; border-radius: 4px; }
+.price { color: #c05621; font-weight: bold; }
+
+/* ---------- Forms (login & registration) ---------- */
+form.card {
+    background: #ffffff;
+    max-width: 560px;
+    margin: 14px auto;
+    padding: 26px 30px;
+    border-radius: 10px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, .1);
+}
+form.card .row { margin-bottom: 16px; }
+form.card label { display: block; font-weight: 600; margin-bottom: 5px; color: #1f3a5f; }
+form.card input[type="text"],
+form.card input[type="password"],
+form.card input[type="email"],
+form.card input[type="tel"],
+form.card select,
+form.card textarea {
+    width: 100%;
+    padding: 9px 11px;
+    border: 1px solid #cbd5e0;
+    border-radius: 6px;
+    font-size: .95rem;
+    font-family: inherit;
+}
+form.card input:focus, form.card select:focus, form.card textarea:focus {
+    outline: none;
+    border-color: #2c5282;
+    box-shadow: 0 0 0 3px rgba(44, 82, 130, .15);
+}
+form.card textarea { resize: vertical; min-height: 80px; }
+.inline-opts { display: flex; gap: 18px; flex-wrap: wrap; }
+.inline-opts label { font-weight: 400; display: inline-flex; gap: 6px; align-items: center; }
+
+.btn {
+    background: #1f3a5f;
+    color: #fff;
+    border: none;
+    padding: 10px 26px;
+    border-radius: 6px;
+    font-size: .95rem;
+    cursor: pointer;
+    transition: background .2s;
+}
+.btn:hover { background: #2c5282; }
+.btn.orange { background: #dd6b20; }
+.btn.orange:hover { background: #c05621; }
+.btn.gray { background: #718096; }
+.btn.gray:hover { background: #4a5568; }
+.btn-row { display: flex; gap: 14px; justify-content: center; margin-top: 8px; }
+
+/* ---------- Utility ---------- */
+.note {
+    background: #ebf8ff;
+    border: 1px solid #90cdf4;
+    color: #2c5282;
+    padding: 10px 14px;
+    border-radius: 6px;
+    font-size: .88rem;
+    margin-top: 14px;
+}
+.total-row td { font-weight: bold; background: #fff7ed !important; font-size: 1.05rem; }

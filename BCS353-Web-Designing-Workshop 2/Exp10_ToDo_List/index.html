@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!--
+  EXPERIMENT 10 - MINI PROJECT (Topic 2: TO-DO LIST)
+  A complete static web application that integrates HTML, CSS and JavaScript:
+   HTML : form, input, buttons, unordered list, data-* attributes, favicon
+   CSS  : flexbox, round corners, transitions, media query, :hover states
+   JS   : variables, functions, events, arrays, objects, string methods,
+          DOM manipulation, form validation and localStorage persistence
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exp 10 - To-Do List App</title>
+    <link rel="icon" type="image/svg+xml" href="../Exp01_Homepage_Frames/images/logo.svg">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="app">
+        <header class="app-header">
+            <h1>My To-Do List</h1>
+            <p>Experiment 10 &mdash; HTML + CSS + JavaScript integrated mini project</p>
+            <p>Project by: Kanan Tarun Sangal &bull; GL Bajaj Institute of Technology &amp; Management</p>
+        </header>
+
+        <!-- Add-task form (JS validates empty / duplicate input) -->
+        <form id="task-form" novalidate>
+            <input type="text" id="task-input" maxlength="80"
+                   placeholder="Type a new task and press Add...">
+            <button type="submit" id="add-btn">Add Task</button>
+        </form>
+        <p id="form-error" class="form-error"></p>
+
+        <!-- Filter buttons -->
+        <div class="filters">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="active">Active</button>
+            <button class="filter-btn" data-filter="completed">Completed</button>
+            <button id="clear-completed" type="button">Clear Completed</button>
+        </div>
+
+        <!-- Task list is rendered dynamically by app.js -->
+        <ul id="task-list"></ul>
+
+        <footer class="app-footer">
+            <span id="task-stats">0 tasks</span>
+            <span id="storage-note"></span>
+        </footer>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>

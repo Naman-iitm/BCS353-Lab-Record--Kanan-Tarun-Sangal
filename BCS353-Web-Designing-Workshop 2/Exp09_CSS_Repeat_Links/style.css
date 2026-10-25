@@ -1,0 +1,94 @@
+/* ============================================================
+   EXPERIMENT 9 - CSS background-repeat and link pseudo-classes
+   ============================================================ */
+
+body {
+    margin: 0;
+    padding: 30px;
+    font-family: "Segoe UI", Arial, sans-serif;
+    color: #2d3748;
+    background: #f5f7fa;
+}
+
+h1 {
+    font-family: Georgia, serif;
+    color: #1f3a5f;
+    text-align: center;
+    border-bottom: 3px solid #f4a261;
+    display: block;
+    padding-bottom: 8px;
+    max-width: 820px;
+    margin: 0 auto 26px;
+}
+
+h2 { color: #2c5282; max-width: 820px; margin: 26px auto 12px; }
+
+/* ---------- background-repeat demonstration boxes ---------- */
+.repeat-grid {
+    max-width: 820px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 18px;
+}
+.demo {
+    height: 180px;
+    border: 2px solid #1f3a5f;
+    border-radius: 10px;
+    background-color: #ffffff;
+    background-image: url("images/pattern.svg");
+    padding: 12px;
+}
+.demo p {
+    background: rgba(255, 255, 255, .85);
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 5px;
+    font-weight: 600;
+    color: #c05621;
+}
+.repeat    { background-repeat: repeat; }     /* default: tiles both directions */
+.repeat-x  { background-repeat: repeat-x; }   /* tiles horizontally only */
+.repeat-y  { background-repeat: repeat-y; }   /* tiles vertically only */
+.no-repeat { background-repeat: no-repeat; }  /* image appears once */
+
+/* ---------- link pseudo-classes (order matters: LVHA) ---------- */
+.link-box {
+    max-width: 820px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px 26px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, .08);
+}
+.link-box a { font-size: 1.05rem; margin-right: 26px; text-decoration: none; }
+
+/* unvisited link */
+.link-box a:link {
+    color: #2b6cb0;
+}
+/* visited link */
+.link-box a:visited {
+    color: #805ad5;
+}
+/* mouse hover over the link */
+.link-box a:hover {
+    color: #dd6b20;
+    text-decoration: underline;
+    font-weight: bold;
+}
+/* selected / active link (while clicking) */
+.link-box a:active {
+    color: #e53e3e;
+}
+
+.legend {
+    max-width: 820px;
+    margin: 14px auto 0;
+    font-size: .85rem;
+    color: #4a5568;
+    background: #ebf8ff;
+    border: 1px solid #90cdf4;
+    border-radius: 8px;
+    padding: 10px 16px;
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!--
+  EXPERIMENT 9 - CSS background-repeat and link pseudo-classes
+  1) Control image repetition: repeat | repeat-x | repeat-y | no-repeat
+  2) Link styles: a:link, a:visited, a:hover, a:active
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exp 9 - background-repeat &amp; Link States</title>
+    <link rel="icon" type="image/svg+xml" href="images/logo.svg">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>CSS background-repeat &amp; Link Pseudo-classes</h1>
+
+    <h2>1) Controlling image repetition with background-repeat</h2>
+    <div class="repeat-grid">
+        <div class="demo repeat">
+            <p>background-repeat: repeat</p>
+        </div>
+        <div class="demo repeat-x">
+            <p>background-repeat: repeat-x</p>
+        </div>
+        <div class="demo repeat-y">
+            <p>background-repeat: repeat-y</p>
+        </div>
+        <div class="demo no-repeat">
+            <p>background-repeat: no-repeat</p>
+        </div>
+    </div>
+
+    <h2>2) Styles for links (a:link, a:visited, a:hover, a:active)</h2>
+    <div class="link-box">
+        <a href="https://www.aktu.ac.in" target="_blank">Unvisited / visited link</a>
+        <a href="#hover-demo">Hover over me</a>
+        <a href="#active-demo">Click &amp; hold me (active)</a>
+        <a href="index.html">Reload this page</a>
+    </div>
+
+    <p class="legend">
+        <strong>LVHA rule:</strong> link pseudo-classes must be declared in the order
+        <em>:link &rarr; :visited &rarr; :hover &rarr; :active</em> so that every state
+        works correctly. Hover changes the link orange; the visited link turns purple;
+        while pressing a link it becomes red (active).
+    </p>
+
+    <p style="text-align:center; margin-top:26px; font-size:.82rem; color:#4a5568;">
+        BCS353 Web Designing Workshop &bull; Project by Kanan Tarun Sangal
+        &bull; GL Bajaj Institute of Technology &amp; Management
+    </p>
+</body>
+</html>

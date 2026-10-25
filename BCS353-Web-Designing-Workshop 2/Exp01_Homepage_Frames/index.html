@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!--
+  Experiment 1 - HOMEPAGE using THREE FRAMES
+  Row layout  : Top frame (logo, college name, navigation links)
+  Column layout inside the remaining row:
+                Left frame  (department links CSE/ECE/EEE/CIVIL)
+                Right frame (content pages load here, initially home.html)
+  Note: <frameset>/<frame> are used because the assignment explicitly
+  requires a three-frame static home page.
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BookHaven - Online Bookstore (Frames)</title>
+    <link rel="icon" type="image/svg+xml" href="images/logo.svg">
+</head>
+<frameset rows="118,*" frameborder="1" border="1" framespacing="0">
+
+    <!-- Frame 1: TOP frame -->
+    <frame src="frames/top.html" name="topFrame" scrolling="no" noresize>
+
+    <frameset cols="190,*">
+        <!-- Frame 2: LEFT frame -->
+        <frame src="frames/left.html" name="leftFrame" scrolling="auto" noresize>
+        <!-- Frame 3: RIGHT (main) frame -->
+        <frame src="frames/home.html" name="mainFrame">
+    </frameset>
+
+    <noframes>
+        <body>
+            <p>Your browser does not support frames. Please enable frames to view this website.</p>
+        </body>
+    </noframes>
+</frameset>
+</html>

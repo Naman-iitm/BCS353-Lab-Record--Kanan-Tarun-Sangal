@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<!-- RIGHT FRAME - ECE department catalogue (opens when "ECE" is clicked) -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ECE Books</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script>
+        function addToCart(bookName) {
+            alert('"' + bookName + '" has been added to your cart.');
+        }
+    </script>
+</head>
+<body>
+    <div class="content">
+        <h2>ECE - Electronics &amp; Communication Engineering Books</h2>
+        <table class="grid">
+            <tr><th>Cover</th><th>Book</th><th>Author</th><th>Publisher</th><th>Price</th><th>Action</th></tr>
+            <tr>
+                <td><img class="cover" src="../images/ai.svg" alt="Artificial Intelligence"></td>
+                <td>Artificial Intelligence</td><td>S. Russel</td><td>Princeton Hall</td>
+                <td class="price">$63</td>
+                <td><button class="btn orange" onclick="addToCart('Artificial Intelligence')">Add to cart</button></td>
+            </tr>
+            <tr>
+                <td><img class="cover" src="../images/digital-electronics.svg" alt="Digital Electronics"></td>
+                <td>Digital Electronics</td><td>Morris Mano</td><td>McGraw Hill</td>
+                <td class="price">$45</td>
+                <td><button class="btn orange" onclick="addToCart('Digital Electronics')">Add to cart</button></td>
+            </tr>
+            <tr>
+                <td><img class="cover" src="../images/signals.svg" alt="Signals and Systems"></td>
+                <td>Signals &amp; Systems</td><td>Oppenheim</td><td>Oxford</td>
+                <td class="price">$55</td>
+                <td><button class="btn orange" onclick="addToCart('Signals & Systems')">Add to cart</button></td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

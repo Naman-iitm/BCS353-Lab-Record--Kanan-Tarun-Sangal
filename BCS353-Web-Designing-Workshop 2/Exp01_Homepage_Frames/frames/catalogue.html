@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<!-- RIGHT FRAME - CATALOGUE PAGE (Experiment 3 inside the framed site)
+     Table columns: cover snapshot, book, author, publisher, price, Add to cart. -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Catalogue Page</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script>
+        // Add-to-cart feedback (the static cart page lists the selected books)
+        function addToCart(bookName) {
+            alert('"' + bookName + '" has been added to your cart.\n\nOpen the Cart page to view it.');
+        }
+    </script>
+</head>
+<body>
+    <div class="content">
+        <h2>Book Catalogue</h2>
+        <p>Details of all the books available on the website:</p>
+
+        <table class="grid">
+            <tr>
+                <th>Cover</th>
+                <th>Book</th>
+                <th>Author</th>
+                <th>Publisher</th>
+                <th>Price</th>
+                <th>Action</th>
+            </tr>
+
+            <tr>
+                <td><img class="cover" src="../images/xml-bible.svg" alt="XML Bible cover"></td>
+                <td>XML Bible</td>
+                <td>Winston</td>
+                <td>Wiley</td>
+                <td class="price">$40.5</td>
+                <td><button class="btn orange" onclick="addToCart('XML Bible')">Add to cart</button></td>
+            </tr>
+            <tr>
+                <td><img class="cover" src="../images/java2.svg" alt="Java 2 cover"></td>
+                <td>Java 2</td>
+                <td>Watson</td>
+                <td>BPB Publications</td>
+                <td class="price">$35.5</td>
+                <td><button class="btn orange" onclick="addToCart('Java 2')">Add to cart</button></td>
+            </tr>
+            <tr>
+                <td><img class="cover" src="../images/html24.svg" alt="HTML in 24 hours cover"></td>
+                <td>HTML in 24 Hours</td>
+                <td>Sam Peter</td>
+                <td>Sam Publication</td>
+                <td class="price">$50</td>
+                <td><button class="btn orange" onclick="addToCart('HTML in 24 Hours')">Add to cart</button></td>
+            </tr>
+            <tr>
+                <td><img class="cover" src="../images/ai.svg" alt="Artificial Intelligence cover"></td>
+                <td>Artificial Intelligence</td>
+                <td>S. Russel</td>
+                <td>Princeton Hall</td>
+                <td class="price">$63</td>
+                <td><button class="btn orange" onclick="addToCart('Artificial Intelligence')">Add to cart</button></td>
+            </tr>
+            <tr>
+                <td><img class="cover" src="../images/digital-electronics.svg" alt="Digital Electronics cover"></td>
+                <td>Digital Electronics</td>
+                <td>Morris Mano</td>
+                <td>McGraw Hill</td>
+                <td class="price">$45</td>
+                <td><button class="btn orange" onclick="addToCart('Digital Electronics')">Add to cart</button></td>
+            </tr>
+            <tr>
+                <td><img class="cover" src="../images/signals.svg" alt="Signals and Systems cover"></td>
+                <td>Signals &amp; Systems</td>
+                <td>Oppenheim</td>
+                <td>Oxford</td>
+                <td class="price">$55</td>
+                <td><button class="btn orange" onclick="addToCart('Signals & Systems')">Add to cart</button></td>
+            </tr>
+            <tr>
+                <td><img class="cover" src="../images/electric-machines.svg" alt="Electric Machines cover"></td>
+                <td>Electric Machines</td>
+                <td>I. J. Nagrath</td>
+                <td>Pearson</td>
+                <td class="price">$48</td>
+                <td><button class="btn orange" onclick="addToCart('Electric Machines')">Add to cart</button></td>
+            </tr>
+            <tr>
+                <td><img class="cover" src="../images/power-systems.svg" alt="Power Systems cover"></td>
+                <td>Power Systems</td>
+                <td>C. L. Wadhwa</td>
+                <td>Cambridge</td>
+                <td class="price">$52</td>
+                <td><button class="btn orange" onclick="addToCart('Power Systems')">Add to cart</button></td>
+            </tr>
+            <tr>
+                <td><img class="cover" src="../images/structural.svg" alt="Structural Analysis cover"></td>
+                <td>Structural Analysis</td>
+                <td>R. C. Hibbeler</td>
+                <td>Tata McGraw Hill</td>
+                <td class="price">$58</td>
+                <td><button class="btn orange" onclick="addToCart('Structural Analysis')">Add to cart</button></td>
+            </tr>
+            <tr>
+                <td><img class="cover" src="../images/geotechnical.svg" alt="Geotechnical Engineering cover"></td>
+                <td>Geotechnical Engineering</td>
+                <td>B. M. Das</td>
+                <td>Elsevier</td>
+                <td class="price">$42</td>
+                <td><button class="btn orange" onclick="addToCart('Geotechnical Engineering')">Add to cart</button></td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

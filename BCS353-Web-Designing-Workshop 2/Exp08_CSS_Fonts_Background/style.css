@@ -1,0 +1,93 @@
+/* ============================================================
+   EXPERIMENT 8 - CSS: fonts, styles and background images
+   Selectors demonstrated: element, class (.box) and id (#main-title)
+   ============================================================ */
+
+/* Background image set for the WHOLE PAGE (the <body> element) */
+body {
+    margin: 0;
+    padding: 30px;
+    font-family: "Segoe UI", Arial, sans-serif;
+    color: #2d3748;
+    background-image: url("images/pattern.svg");
+    background-repeat: repeat;
+    background-attachment: fixed;
+}
+
+/* ID selector */
+#main-title {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 2rem;
+    color: #1f3a5f;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, .15);
+    margin-bottom: 6px;
+}
+
+.subtitle {
+    text-align: center;
+    font-style: italic;
+    color: #c05621;
+    margin-bottom: 28px;
+}
+
+/* CLASS selectors - each one defines a different font and style */
+.box {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px 24px;
+    margin: 16px auto;
+    max-width: 760px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, .1);
+}
+
+.font-serif {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.15rem;
+    color: #2c5282;
+    font-weight: bold;
+}
+
+.font-sans {
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-style: normal;
+    color: #2f855a;
+}
+
+.font-mono {
+    font-family: "Courier New", monospace;
+    background: #1a202c;
+    color: #68d391;
+    padding: 14px 18px;
+    border-radius: 6px;
+}
+
+.font-cursive {
+    font-family: "Brush Script MT", cursive;
+    font-size: 1.5rem;
+    color: #b83280;
+}
+
+/* Background image set for a SINGLE ELEMENT (this div only) */
+.element-bg {
+    color: #1f3a5f;
+    font-weight: 600;
+    background-image: url("images/pattern.svg");
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    background-size: 130px;
+    border-left: 6px solid #f4a261;
+    min-height: 130px;
+}
+
+.tag {
+    display: inline-block;
+    background: #1f3a5f;
+    color: #fff;
+    font-size: .75rem;
+    padding: 3px 10px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+}

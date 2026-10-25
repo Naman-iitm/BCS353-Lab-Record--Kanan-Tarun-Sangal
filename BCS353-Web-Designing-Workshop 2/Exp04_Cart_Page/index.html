@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<!--
+  EXPERIMENT 4 - CART PAGE (standalone)
+  Shows the books added to the cart: book name, price, quantity, amount
+  and the total amount (layout matches the prescribed wireframe).
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exp 4 - Cart Page</title>
+    <link rel="icon" type="image/svg+xml" href="../Exp01_Homepage_Frames/images/logo.svg">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: "Segoe UI", Arial, sans-serif; background: #f5f7fa; color: #2d3748; }
+
+        header { background: linear-gradient(135deg, #1f3a5f, #2c5282); color: #fff; }
+        .brand { display: flex; align-items: center; gap: 14px; padding: 12px 24px; }
+        .brand img { width: 52px; height: 52px; }
+        .brand h1 { font-size: 1.3rem; }
+        .brand small { display: block; font-size: .72rem; font-weight: 400; opacity: .85; }
+        nav { display: flex; background: rgba(0,0,0,.22); }
+        nav a { flex: 1; text-align: center; color: #fff; text-decoration: none; padding: 10px;
+                border-right: 1px solid rgba(255,255,255,.15); font-size: .9rem; }
+        nav a:last-child { border-right: none; }
+        nav a:hover, nav a.active { background: #f4a261; color: #1f3a5f; }
+
+        .layout { display: flex; min-height: calc(100vh - 118px); }
+        aside { width: 190px; background: #1f3a5f; color: #fff; padding: 18px 0; }
+        aside h3 { text-align: center; font-size: .9rem; text-transform: uppercase;
+                   letter-spacing: 1px; padding-bottom: 10px; border-bottom: 1px solid rgba(255,255,255,.2);
+                   margin: 0 12px 12px; }
+        aside a { display: block; color: #dbeafe; text-decoration: none; padding: 12px 22px;
+                  border-left: 4px solid transparent; }
+        aside a:hover { background: rgba(244,162,97,.18); border-left-color: #f4a261; color: #fff; }
+
+        main { flex: 1; padding: 30px 36px; }
+        main h2 { color: #1f3a5f; border-bottom: 3px solid #f4a261; display: inline-block;
+                  padding-bottom: 4px; margin-bottom: 16px; }
+
+        table { width: 100%; max-width: 850px; border-collapse: collapse; background: #fff;
+                box-shadow: 0 2px 8px rgba(0,0,0,.08); border-radius: 8px; overflow: hidden; }
+        th { background: #1f3a5f; color: #fff; padding: 12px 10px; text-align: left; }
+        td { padding: 12px 10px; border-bottom: 1px solid #e2e8f0; }
+        tr:nth-child(even) td { background: #f8fafc; }
+        tr.total td { font-weight: bold; background: #fff7ed; font-size: 1.05rem; color: #c05621; }
+        .note { max-width: 850px; margin-top: 16px; background: #ebf8ff; border: 1px solid #90cdf4;
+                color: #2c5282; padding: 10px 14px; border-radius: 6px; font-size: .88rem; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="brand">
+            <img src="../Exp01_Homepage_Frames/images/logo.svg" alt="BookHaven logo">
+            <h1>BookHaven Online Bookstore
+                <small>GL Bajaj Institute of Technology &amp; Management &bull; Project by: Kanan Tarun Sangal</small>
+            </h1>
+        </div>
+        <nav>
+            <a href="../Exp01_Homepage_Frames/frames/home.html">Home</a>
+            <a href="../Exp02_Login_Page/index.html">Login</a>
+            <a href="../Exp05_Registration_Form/index.html">Registration</a>
+            <a href="../Exp03_Catalogue_Page/index.html">Catalogue</a>
+            <a href="#" class="active">Cart</a>
+        </nav>
+    </header>
+
+    <div class="layout">
+        <aside>
+            <h3>Departments</h3>
+            <a href="../Exp01_Homepage_Frames/frames/cse.html">CSE</a>
+            <a href="../Exp01_Homepage_Frames/frames/ece.html">ECE</a>
+            <a href="../Exp01_Homepage_Frames/frames/eee.html">EEE</a>
+            <a href="../Exp01_Homepage_Frames/frames/civil.html">CIVIL</a>
+        </aside>
+
+        <main>
+            <h2>My Cart</h2>
+            <table>
+                <tr>
+                    <th>Book Name</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Amount</th>
+                </tr>
+                <tr>
+                    <td>Java 2</td>
+                    <td>$35.5</td>
+                    <td>2</td>
+                    <td>$70</td>
+                </tr>
+                <tr>
+                    <td>XML Bible</td>
+                    <td>$40.5</td>
+                    <td>1</td>
+                    <td>$40.5</td>
+                </tr>
+                <tr class="total">
+                    <td colspan="3">Total amount</td>
+                    <td>- $130.5</td>
+                </tr>
+            </table>
+            <p class="note">The cart page contains the details of the books which have been
+            added to the cart. Amount = Price &times; Quantity; the last row shows the total
+            amount of all selected books.</p>
+        </main>
+    </div>
+</body>
+</html>

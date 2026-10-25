@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<!--
+  EXPERIMENT 8 - CSS fonts, styles and background images
+  1) Different fonts/styles defined with selectors and activated by classes.
+  2) Background image set for the whole PAGE (body) AND for a single element.
+  All three CSS types are shown: external (style.css), internal (<style>)
+  and inline (style="...") on the last paragraph.
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exp 8 - CSS Fonts &amp; Background</title>
+    <link rel="icon" type="image/svg+xml" href="images/logo.svg">
+    <!-- EXTERNAL CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- INTERNAL CSS -->
+    <style>
+        .internal-note {
+            max-width: 760px;
+            margin: 16px auto;
+            padding: 12px 18px;
+            background: #fffaf0;
+            border: 1px dashed #dd6b20;
+            border-radius: 8px;
+            font-size: .9rem;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="main-title">CSS Fonts &amp; Backgrounds</h1>
+    <p class="subtitle">Experiment 8 - selectors, fonts, colours and background images</p>
+
+    <div class="box">
+        <span class="tag">class selector - serif font</span>
+        <p class="font-serif">The quick brown fox jumps over the lazy dog. (Georgia / serif, bold)</p>
+    </div>
+
+    <div class="box">
+        <span class="tag">class selector - sans-serif font</span>
+        <p class="font-sans">The quick brown fox jumps over the lazy dog. (Segoe UI / sans-serif)</p>
+    </div>
+
+    <div class="box">
+        <span class="tag">class selector - monospace font</span>
+        <p class="font-mono">var greeting = "Hello, World!";  /* Courier New / monospace */</p>
+    </div>
+
+    <div class="box">
+        <span class="tag">class selector - cursive font</span>
+        <p class="font-cursive">The quick brown fox jumps over the lazy dog. (cursive)</p>
+    </div>
+
+    <!-- Background image on a SINGLE ELEMENT -->
+    <div class="box element-bg">
+        <span class="tag">background image on one element</span>
+        <p>This single &lt;div&gt; carries its own background image
+           (<strong>background-image</strong> with no-repeat, positioned bottom-right),
+           while the whole page behind it also has a repeating background image.</p>
+    </div>
+
+    <p class="internal-note">This yellow note is styled by <strong>internal CSS</strong>
+       inside the &lt;style&gt; tag.</p>
+
+    <!-- INLINE CSS -->
+    <p class="internal-note"
+       style="background:#ebf8ff; border-color:#2c5282; font-weight:bold;">
+       This paragraph uses <strong>inline CSS</strong> through its style attribute.
+    </p>
+
+    <p style="text-align:center; margin-top:26px; font-size:.82rem; color:#4a5568;">
+       BCS353 Web Designing Workshop &bull; Project by Kanan Tarun Sangal
+       &bull; GL Bajaj Institute of Technology &amp; Management
+    </p>
+</body>
+</html>
